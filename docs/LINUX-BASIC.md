@@ -1,6 +1,35 @@
 # LINUX BASIC
 
+## SSH 免密码登录
+1. 安装ssh    
+`apt-get install openssh-server`
+1. 查看ssh运行状态     
+`ps -e | grep ssh`  
+如果发现 sshd 和 ssh-agent 即表明 ssh服务基本运行正常
+1. 生成公钥和私钥  
+`ssh-keygen -t rsa -P ""`
+1. 将公钥追加到文件  
+`ca ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keyst`
+1. 权限问题
+   * .ssh目录权限是700
+   *  两个dsa 和 rsa的 私钥权限是600
+   *  其余文件权限是644
+   * .ssh的父目录文件权限应该是755
+   
 ## 文件操作
+ * 挂载磁盘
+```
+ [root@weirui /]# df -h  //挂在磁盘操作（还有一个300G的盘没显示出来）
+ Filesystem            Size  Used Avail Use% Mounted on
+ /dev/hda1              39G   12G   26G  32% /
+ tmpfs                 4.0G     0  4.0G   0% /dev/shm
+ [root@weirui /]# mkfs -t ext4 /dev/xvdb1      //格式化未挂载的磁盘，使用ext3格式 
+  [root@weirui /]# mkdir /alidata1       //创建挂载对应的目录 
+ [root@weirui /]# mount /dev/xvdb1 /alidata1    //将磁盘挂载到创建的目录上 
+ ```
+ * 开机直接挂载  
+编辑`/etc/fstab`文件  
+添加：`/dev/sda1 /test ext4 defaults 0  0 `
 
 ## 网络
  * 查看端口状态
