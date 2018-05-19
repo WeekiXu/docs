@@ -1,9 +1,9 @@
 # 历程
 
-## [AMBARI](doc/AMBARI.md)
-## [LINUX](docs/LINUX-BASIC.md)
-## [HADOOP](doc/HADOOP.md)
-## [JAVA8](doc/JAVA8.md)
-## [MONGODB](doc/MONGODB.md)
-## [MYSQL](doc/MYSQL.md)
+## [AMBARI](./docs/AMBARI.md)
+## [LINUX](./docs/LINUX-BASIC.md)
+## [HADOOP](./docs/HADOOP.md)
+## [JAVA8](./docs/JAVA8.md)
+## [MONGODB](./docs/MONGODB.md)
+## [MYSQL](./docs/MYSQL.md)
 
