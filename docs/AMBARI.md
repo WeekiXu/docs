@@ -1,5 +1,6 @@
 # AMBARI
-
+## Installation Guide for Ambari 2.6.2
+https://cwiki.apache.org/confluence/display/AMBARI/Installation+Guide+for+Ambari+2.6.2
 
 ## 异常
 ### ambari-agent注册失败

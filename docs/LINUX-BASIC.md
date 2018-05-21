@@ -29,7 +29,7 @@
  ```
  * 开机直接挂载  
 编辑`/etc/fstab`文件  
-添加：`/dev/sda1 /test ext4 defaults 0  0 `
+添加：`/dev/xvdb1 /alidata1 ext4 defaults 0 0 `
 
 ## 网络
  * 查看端口状态
