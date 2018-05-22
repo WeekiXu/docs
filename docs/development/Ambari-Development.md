@@ -1,5 +1,73 @@
 # Ambari-Development
-source https://cwiki.apache.org/confluence/display/AMBARI/Ambari+Development
+
+## 构建基础环境 
+* git `yum install git -y`
+* maven 3.1及以上  http://maven.apache.org/install.html
+* nodejs 最新版 https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora
+* python-devel `yum install python-devel.x86_64 -y`
+
+## 常见异常
+* _Too many files with unapproved license: 13948_   
+   * 解决方案：编译命令加入 `-Drat.skip=true` 参数
+``` 
+`mvn -e -B clean install rpm:rpm -Drat.skip=true -DnewVersion=2.6.2.0.0 -DbuildNumber=631319b00937a8d04667d93714241d2a0cb17275 -DskipTests -Dpython.ver="python >= 2.7"`
+```
+* _ambari-admin编译失败_    
+   **解决：**  个人将ambari-admin（包括子目录ambari-admin/src/main/resources/ui/admin-web）里面生成的node、node_modules、package-lock.json删除，保持干净的源码环境，再单独编译ambari-admin
+   * `cd ambari-admin/src/main/resources/ui/admin-web`目录下，编辑 .bowerrc ，修改后的内容如下：
+ ```
+    {
+        "directory": "app/bower_components",
+        "allow_root": true
+    } 
+ ```
+   在上述目录下，安装npm依赖包，全局安装gulp、bower,安装bower的依赖包,安装 gulp-webserver
+  ``` 
+     npm install
+     npm install -g bower
+     npm install -g gulp
+     bower install
+     npm install gulp-webserver --save-dev
+  ```
+   在ambari-admin目录下运行命令重新单独编译ambari-admin模块    
+    `mvn install -Drat.skip=true -Preplaceurl -X`
+   将 `apache-ambari-2.6.2-src/pom.xml`中的ambari-admin模块注释  
+    `<!--<module>ambari-admin</module>-->`  
+   转载：https://blog.csdn.net/ZhouyuanLinli/article/details/79399287
+
+*  _ambari-metrics编译时间过长，下载超时_
+   * 手动下载文件后搭建服务器提供本地下载
+   * 搭建nginx/httpd服务器，将下载文件放入服务器路径中
+   * 修改源文件下载路径 `apache-ambari-2.6.2-src/ambari-metrics/pom.xml`
+  ``` 
+    <hbase.tar>http://10.122.64.230/hbase-1.1.2.2.6.4.0-91.tar.gz</hbase.tar>
+    <hbase.folder>hbase-1.1.2.2.6.4.0-91</hbase.folder>
+    <hadoop.tar>http://10.122.64.230/hadoop-2.7.3.2.6.4.0-91.tar.gz</hadoop.tar>
+    <hadoop.folder>hadoop-2.7.3.2.6.4.0-91</hadoop.folder>
+    <hbase.winpkg.zip>https://msibuilds.blob.core.windows.net/hdp/2.x/2.2.4.2/2/hbase-0.98.4.2.2.4.2-0002-hadoop2.winpkg.zip</hbase.winpkg.zip>
+    <hbase.winpkg.folder>hbase-0.98.4.2.2.4.2-0002-hadoop2</hbase.winpkg.folder>
+    <hadoop.winpkg.zip>https://msibuilds.blob.core.windows.net/hdp/2.x/2.2.4.2/2/hadoop-2.6.0.2.2.4.2-0002.winpkg.zip</hadoop.winpkg.zip>
+    <hadoop.winpkg.folder>hadoop-2.6.0.2.2.4.2-0002</hadoop.winpkg.folder>
+    <grafana.folder>grafana-2.6.0</grafana.folder>
+    <grafana.tar>http://10.122.64.230/grafana-2.6.0.linux-x64.tar.gz</grafana.tar>
+    <phoenix.tar>http://10.122.64.230/phoenix-4.7.0.2.6.4.0-91.tar.gz</phoenix.tar>
+	
+	<!--
+    <hbase.tar>https://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.6.4.0/tars/hbase/hbase-1.1.2.2.6.4.0-91.tar.gz</hbase.tar>
+    <hbase.folder>hbase-1.1.2.2.6.4.0-91</hbase.folder>
+    <hadoop.tar>https://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.6.4.0/tars/hadoop/hadoop-2.7.3.2.6.4.0-91.tar.gz</hadoop.tar>
+    <hadoop.folder>hadoop-2.7.3.2.6.4.0-91</hadoop.folder>
+    <hbase.winpkg.zip>https://msibuilds.blob.core.windows.net/hdp/2.x/2.2.4.2/2/hbase-0.98.4.2.2.4.2-0002-hadoop2.winpkg.zip</hbase.winpkg.zip>
+    <hbase.winpkg.folder>hbase-0.98.4.2.2.4.2-0002-hadoop2</hbase.winpkg.folder>
+    <hadoop.winpkg.zip>https://msibuilds.blob.core.windows.net/hdp/2.x/2.2.4.2/2/hadoop-2.6.0.2.2.4.2-0002.winpkg.zip</hadoop.winpkg.zip>
+    <hadoop.winpkg.folder>hadoop-2.6.0.2.2.4.2-0002</hadoop.winpkg.folder>
+    <grafana.folder>grafana-2.6.0</grafana.folder>
+    <grafana.tar>https://grafanarel.s3.amazonaws.com/builds/grafana-2.6.0.linux-x64.tar.gz</grafana.tar>
+    <phoenix.tar>https://public-repo-1.hortonworks.com/HDP/centos6/2.x/updates/2.6.4.0/tars/phoenix/phoenix-4.7.0.2.6.4.0-91.tar.gz</phoenix.tar>
+    -->
+```
+
+# 官方文档
 ## Tools needed to build Ambari
 The following tools are needed to build Ambari from source.  
 Alternatively, you can easily launch a VM that is preconfigured with all the tools that you need.  See the Pre-Configured Development Environment section in the Quick [Start Guide](https://cwiki.apache.org/confluence/display/AMBARI/Quick+Start+Guide).
@@ -147,3 +215,5 @@ Start Ambari Agent:
 `ambari-agent start`  
 See Ambari Agent log:  
 `tail -f /var/log/ambari-agent/ambari-agent.log`  
+
+source https://cwiki.apache.org/confluence/display/AMBARI/Ambari+Development

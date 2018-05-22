@@ -8,3 +8,7 @@
 ## [MYSQL](./docs/MYSQL.md)
 ## [DOCKER](./docs/DOCKER.md)
 
+# Development install
+## [AMBARI](./docs/development/AMBARI-INSTALL.md)
+## [MAVEN](./docs/development/MAVEN-INSTALL.md)
+## [NODEJS](./docs/development/NODEJS-INSTALL.md)

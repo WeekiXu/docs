@@ -63,6 +63,7 @@ $ cat jmxtools-1.2.1.pom
 ```
 ### RHEL (CentOS 6 or 7) & SUSE (SLES 11):
 `mvn -B clean install rpm:rpm -DnewVersion=2.6.2.0.0 -DbuildNumber=631319b00937a8d04667d93714241d2a0cb17275 -DskipTests -Dpython.ver="python >= 2.6"`
+
 ### Ubuntu/Debian:
 `mvn -B clean install jdeb:jdeb -DnewVersion=2.6.2.0.0 -DbuildNumber=631319b00937a8d04667d93714241d2a0cb17275 -DskipTests -Dpython.ver="python >= 2.6"`
 
