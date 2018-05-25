@@ -7,3 +7,5 @@
 `yum install java-1.8.0-openjdk* -y`
 1. 使用命令检查是否安装成功    
 `java -version`
+
+## Lambda

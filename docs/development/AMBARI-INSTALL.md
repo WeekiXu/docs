@@ -1,7 +1,17 @@
-# Installation Guide for Ambari 2.6.2
-## Build and install Ambari 2.6.2
+# Installation Guide for Ambari
+## yum install Ambari 2.4.3
+
 Refer [Ambari Development](Ambari-Development.md) for prerequisites and additional information on how to build Apache Ambari.
 
+Ambari安装之部署本地库：https://yq.aliyun.com/articles/368491?spm=5176.10695662.1996646101.searchclickresult.12d592d72cdPEF
+
+Ambari安装之安装并配置Ambari-server：https://yq.aliyun.com/articles/368496?spm=5176.10695662.1996646101.searchclickresult.12d592d72cdPEF
+
+参考：https://yq.aliyun.com/articles/368491?spm=a2c4e.11153940.blogcont368496.26.557eabf4EGl7cT
+
+
+
+## Build and install Ambari 2.6.2
 **Step 1:** Download and build Ambari 2.6.2 source  
 Go to http://www.apache.org/dyn/closer.cgi/ambari/ambari-2.6.2 and find the suggested mirror for download. The process to verify the download is described is at http://www.apache.org/dyn/closer.cgi#verify
 ``` 

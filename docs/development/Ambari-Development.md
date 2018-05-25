@@ -1,16 +1,19 @@
 # Ambari-Development
 
 ## 构建基础环境 
+* jdk8 http://public-repo-1.hortonworks.com/ARTIFACTS/jdk-8u77-linux-x64.tar.gz
 * git `yum install git -y`
 * maven 3.1及以上  http://maven.apache.org/install.html
 * nodejs 最新版 https://nodejs.org/en/download/package-manager/#enterprise-linux-and-fedora
 * python-devel `yum install python-devel.x86_64 -y`
+* python降级 https://blog.csdn.net/gcangle/article/details/50098151
+* OpenSSL 降级 http://www.mamicode.com/info-detail-2025612.html
 
 ## 常见异常
 * _Too many files with unapproved license: 13948_   
    * 解决方案：编译命令加入 `-Drat.skip=true` 参数
 ``` 
-`mvn -e -B clean install rpm:rpm -Drat.skip=true -DnewVersion=2.6.2.0.0 -DbuildNumber=631319b00937a8d04667d93714241d2a0cb17275 -DskipTests -Dpython.ver="python >= 2.7"`
+`mvn -e -B clean install rpm:rpm -Drat.skip=true -DnewVersion=2.6.2.0.0 -DbuildNumber=631319b00937a8d04667d93714241d2a0cb17275 -DskipTests -Dpython.ver="python >= 2.6"`
 ```
 * _ambari-admin编译失败_    
    **解决：**  个人将ambari-admin（包括子目录ambari-admin/src/main/resources/ui/admin-web）里面生成的node、node_modules、package-lock.json删除，保持干净的源码环境，再单独编译ambari-admin
