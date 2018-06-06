@@ -118,7 +118,7 @@ crontab -e
 0 2 * * * /opt/gitlab/bin/gitlab-rake gitlab:backup:create CRON=1 
 ```
 
-## 系统迁移
+# 系统迁移
 * 新服务器安装gitlab最新版本并配置 参看 [gitlab安装](#-Install-gitlab)
 * 需更旧服务器gitlab服务为最新版本，并备份数据 
 ```
@@ -137,7 +137,7 @@ gitlab-rake gitlab:backup:restore BACKUP=1528278263_2018_06_06_10.8.3
 ```
 * 迁移完成
 
-## 数据恢复
+# 数据恢复
 进入gitlab备份目录`/alidata1/service-data/gitlab`，选择需要恢复的版本  
 
 备份命令：`gitlab-rake gitlab:backup:restore BACKUP=1528275060_2018_06_06_10.8.3`    
@@ -161,7 +161,7 @@ Do you want to continue (yes/no)?
 
 ```
 
-# Updating GitLab installed with the Omnibus GitLab package
+# 系统升级 Updating GitLab installed with the Omnibus GitLab package
 https://docs.gitlab.com/omnibus/update/README.html#updating-using-the-official-repositories
 
 ## Backup 
@@ -184,3 +184,11 @@ sudo apt-get install gitlab-ce
 sudo yum install gitlab-ce
 /opt/gitlab/bin/gitlab-rake gitlab:backup:create
 ```
+
+## 邮箱配置
+如果使用阿里云服务器搭建gitlab，邮箱使用腾讯企业邮箱，需在阿里云控制台申请25端口解封
+
+* 登录阿里云控制台
+* 鼠标指向右上角用户头像 -> 点击弹出 `安全管控`
+* `业务申请`栏中 -> 点击 `25端口解封`
+* 增加 25端口解封申请，填写对应ip及相关信息，提交审核。
