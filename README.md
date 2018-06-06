@@ -10,6 +10,7 @@
 ## [DOCKER](./docs/DOCKER.md)
 
 # Development install
+## [GITLAB](./docs/development/GITLAB-INSTALL.md)
 ## [AMBARI](./docs/development/AMBARI-INSTALL.md)
 ## [MAVEN](./docs/development/MAVEN-INSTALL.md)
 ## [NODEJS](./docs/development/NODEJS-INSTALL.md)

@@ -18,7 +18,7 @@
  1. 或直接将Jar加入${HIVE_HOME}/lib目录    
     此方法 shell链接 和 Hive Server需要重启生效。
  1. 重启hive服务
- 1. shell连接hive，创建自定义空间函数 **UDF**
+ 1. shell连接hive _以系统hive用户登录_，执行命令创建自定义空间函数 **UDF**
  ``` 
  create function ST_Aggr_ConvexHull as 'com.esri.hadoop.hive.ST_Aggr_ConvexHull';
  create function ST_Aggr_Intersection as 'com.esri.hadoop.hive.ST_Aggr_Intersection';
@@ -105,4 +105,5 @@
  create function ST_Touches as 'com.esri.hadoop.hive.ST_Touches';
  create function ST_Union as 'com.esri.hadoop.hive.ST_Union';
  create function ST_Within as 'com.esri.hadoop.hive.ST_Within';
+ show functions;
  ```
