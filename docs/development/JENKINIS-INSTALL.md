@@ -1,7 +1,8 @@
 # INSTALL JENKINS
 
 ## 安装jenkins
-准备数据目录，默认jenkins_home是在用户目录下的`.jenkins`目录，移动到数据盘
+准备数据目录，默认jenkins_home是在用户目录下的`.jenkins`目录，移动到数据盘  
+
 配置`JENKINS_HOME`，编辑`vim /etc/profile`
 ```
 JENKINS_HOME="/alidata1/service-data/jenkins"
@@ -13,6 +14,8 @@ mkdir jenkins
 cd /home/rennet
 ln -s /alidata1/service-data/jenkins .jenkins
 ```
+如果是迁移jenkins，将JENKINS_HOME及war包复制至新服务器即可启动
+
 下载jenkins war包 https://jenkins.io/download/
 ``` 
 cd /alidata1/soft/jenkins

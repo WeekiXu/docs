@@ -192,3 +192,14 @@ sudo yum install gitlab-ce
 * 鼠标指向右上角用户头像 -> 点击弹出 `安全管控`
 * `业务申请`栏中 -> 点击 `25端口解封`
 * 增加 25端口解封申请，填写对应ip及相关信息，提交审核。
+
+## Hook配置
+
+gitlab默认禁止本地请求，当jenkins服务和gitlab处在同一服务器时会出现异常
+```
+Hook execution failed: URL 'http://jenkins.weiresearch.com/project/......' is blocked: Requests to localhost are not allowed
+```
+处理方式：
+1. 管理员账号点击上方扳手图标，进入 `Admin area`->`Settings`->`Outbound requests`
+1. 勾选 `Allow requests to the local network from hooks and services`
+1. Save changes 保存
