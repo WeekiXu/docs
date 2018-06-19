@@ -8,7 +8,7 @@
 ## [MONGODB](./docs/MONGODB.md)
 ## [MYSQL](./docs/MYSQL.md)
 ## [DOCKER](./docs/DOCKER.md)
-## [Firewalld](./docks/Firewalld.md)
+## [Firewalld](./docs/Firewalld.md)
 
 # Development install
 ## [GITLAB](./docs/development/GITLAB-INSTALL.md)
