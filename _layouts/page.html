@@ -1,7 +1,6 @@
 ---
-layout:           default
+layout: layout
 ---
 
-<div id="content">
-    {{ content }}
-</div>
+{% assign __ = site.data.languages[site.language] %}
+{% include page.html %}
