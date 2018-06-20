@@ -2,8 +2,9 @@
 title: DOCKER 安装
 categories:
  - docker
+ - linux
 tags:
- - 环境配置
+ - linux
  - docker
 ---
 

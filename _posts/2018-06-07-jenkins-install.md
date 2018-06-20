@@ -5,6 +5,7 @@ categories:
 tags:
  - jenkins
 ---
+
 # INSTALL JENKINS
 
 ## 安装jenkins
