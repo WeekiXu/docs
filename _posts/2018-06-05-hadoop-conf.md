@@ -13,7 +13,7 @@ tags:
 * HDFS 远程访问
 `dfs.namenode.rpc-address=0.0.0.0:8020`
 
-## HDFS 空间数据库支持
+## HIVE 空间数据库支持
  参考：https://community.hortonworks.com/articles/44319/geo-spatial-queries-with-hive-using-esri-geometry.html    
  https://blog.csdn.net/qianshangding0708/article/details/50381966
  
