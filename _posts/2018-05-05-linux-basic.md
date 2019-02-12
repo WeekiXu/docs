@@ -21,7 +21,7 @@ tags:
 1. 生成公钥和私钥  
 `ssh-keygen -t rsa -P ""`
 1. 将公钥追加到文件  
-`ca ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
+`cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
 1. 权限问题
    * .ssh目录权限是700
    *  两个dsa 和 rsa的 私钥权限是600
