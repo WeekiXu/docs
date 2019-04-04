@@ -13,20 +13,27 @@ tags:
 # LINUX BASIC
 
 ## SSH 免密码登录
+参考： https://blog.csdn.net/qq_38570571/article/details/79268426
+
 1. 安装ssh    
 `apt-get install openssh-server`
 1. 查看ssh运行状态     
 `ps -e | grep ssh`  
 如果发现 sshd 和 ssh-agent 即表明 ssh服务基本运行正常
 1. 生成公钥和私钥  
-`ssh-keygen -t rsa -P ""`
+`ssh-keygen -t rsa -c "ip or mail"`
 1. 将公钥追加到文件  
 `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys`
-1. 权限问题
+1. 权限问题    
+`chmod 600 ~/.ssh/id_rsa*`    
+`chmod 644 ~/.ssh/authorized_keys`
    * .ssh目录权限是700
    *  两个dsa 和 rsa的 私钥权限是600
    *  其余文件权限是644
    * .ssh的父目录文件权限应该是755
+1. 命令参数详解
+  1. -P passphrase  提供(旧)密语。
+  1. -c 添加备注（用于区分公钥）
    
 ## 文件操作
  * 挂载磁盘
