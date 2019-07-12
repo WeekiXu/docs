@@ -36,6 +36,9 @@ tags:
   1. -c 添加备注（用于区分公钥）
    
 ## 文件操作
+ * 上传文件
+   - rz 命令弹出文件选择框即可以当前登录身份上传文件
+   - 如果没有安装则执行 `sudo yum -y install lrzsz` 命令进行安装
  * 挂载磁盘
 ```
  [root@weirui /]# df -h  //挂在磁盘操作（还有一个300G的盘没显示出来）
@@ -94,4 +97,3 @@ vi /etc/passwd
     rennet:x:501:501::/home/rennet:/bin/bash
     username:x:501:501::/home/rennet:/bin/bash
   ```
-   
