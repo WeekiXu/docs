@@ -19,4 +19,10 @@ tags:
 
 [<font size=5>1. 我想成为班长</font>](https://shimo.im/docs/GVWYKW8yYPjqXgrH)
 
+2. [如何加入班级/添加班长](https://shimo.im/docs/wJc6JxyxjPTTy6yd)
+
 2. [敏敏老师的特惠课程](https://shimo.im/docs/t9KyCX3DWGD6vwrx)
+
+1. [敏敏老师力荐课程](https://shimo.im/docs/Cy38rqJ9wvwkTyjx)
+
+1. [极光系列](https://shimo.im/docs/HgdTxwrCCvk6qHRW)
