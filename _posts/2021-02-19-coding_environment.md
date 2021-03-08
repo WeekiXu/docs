@@ -12,10 +12,10 @@ tags:
 
 1. 粘贴代码或输入时自动换行4空格
    Settings > Editor > Code Style > Java > Tabs and Indents > Continuation indent : 4
-    ![img](assets/postimages/2021-02-19-coding_environment.assets/clipboard.png)
+    ![img](/assets/postimages/2021-02-19-coding_environment.assets/clipboard.png)
    
 2. 避免import多个文件合并为 *
-   ![image-20201111145352253](assets/postimages/2021-02-19-coding_environment.assets/image-20201111145352253.png)
+   ![image-20201111145352253](/assets/postimages/2021-02-19-coding_environment.assets/image-20201111145352253.png)
 
 3. 引入Eclipse Code Fomatter
 
@@ -23,17 +23,17 @@ tags:
    2. 配置 Formatter config file 选择配置文件
    3. 配置 Import order 选择配置文件
 
-   ![image-20210308191130984](assets/postimages/2021-02-19-coding_environment.assets/image-20210308191130984.png)
+   ![image-20210308191130984](/assets/postimages/2021-02-19-coding_environment.assets/image-20210308191130984.png)
 
 4. 自动import文件
 
-   ![image-20201111145601922](assets/postimages/2021-02-19-coding_environment.assets/image-20201111145601922.png)
+   ![image-20201111145601922](/assets/postimages/2021-02-19-coding_environment.assets/image-20201111145601922.png)
 
 5. import 顺序
    IDEA：
-   ![image-20210109131955538](assets/postimages/2021-02-19-coding_environment.assets/image-20210109131955538.png)
+   ![image-20210109131955538](/assets/postimages/2021-02-19-coding_environment.assets/image-20210109131955538.png)
    Eclipse:
-   ![image-20210109132023769](assets/postimages/2021-02-19-coding_environment.assets/image-20210109132023769.png)
+   ![image-20210109132023769](/assets/postimages/2021-02-19-coding_environment.assets/image-20210109132023769.png)
    idea和eclipse几乎是完全相反的，综合一下，可以采用 import static all other imports
 
    ```java
@@ -71,13 +71,13 @@ tags:
 
    1. Settings -> Editor -> TODO 增加自己的规则 和 filter `\bXuJiweiTODO\b.*`
 
-       ![img](assets/postimages/2021-02-19-coding_environment.assets/image-20210308190320474.png)
+       ![img](/assets/postimages/2021-02-19-coding_environment.assets/image-20210308190320474.png)
 
    2. Settings -> Editor -> TODO 增加自己的规则 和 filter
 
-      ![img](assets/postimages/2021-02-19-coding_environment.assets/clipboard-1605077965566.png)
+      ![img](/assets/postimages/2021-02-19-coding_environment.assets/clipboard-1605077965566.png)
 
-       ![image-20201111150053666](assets/postimages/2021-02-19-coding_environment.assets/image-20201111150053666.png)
+       ![image-20201111150053666](/assets/postimages/2021-02-19-coding_environment.assets/image-20201111150053666.png)
 
 8. IDEA 2020.3.2 不显示侧边栏
 
@@ -89,9 +89,9 @@ tags:
    <option name="SHOW_TOOL_STRIPES" value="TRUE" />
    ```
 
-    ![image-20210224141209735](assets/postimages/2021-02-19-coding_environment.assets/image-20210224141209735.png)
+    ![image-20210224141209735](/assets/postimages/2021-02-19-coding_environment.assets/image-20210224141209735.png)
 
-   ![image-20210224141101299](assets/postimages/2021-02-19-coding_environment.assets/image-20210224141101299.png)
+   ![image-20210224141101299](/assets/postimages/2021-02-19-coding_environment.assets/image-20210224141101299.png)
 
 
 
