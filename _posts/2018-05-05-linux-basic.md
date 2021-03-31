@@ -34,11 +34,33 @@ tags:
 1. 命令参数详解
   1. -P passphrase  提供(旧)密语。
   1. -c 添加备注（用于区分公钥）
-   
+
 ## 文件操作
  * 上传文件
    - rz 命令弹出文件选择框即可以当前登录身份上传文件
    - 如果没有安装则执行 `sudo yum -y install lrzsz` 命令进行安装
+   
+* vim正常显示gbk编码文件
+  
+加入以下内容：
+  
+```bash
+  vim ~/.vimrc
+  
+  let &termencoding=&encoding
+  set fileencodings=utf-8,gb18030,gbk,gb2312,big5
+  ```
+  
+ * 文件内搜索
+   `grep -n -i "v\$temp_space_header" *.sql`
+   -n 显示行号
+   -i 忽略大小写
+   -c 匹配的行数
+   -w 获取和整个搜索字符匹配的内容
+   -v 忽略 `grep "hello" *.sql | grep -v "grep"`
+   -r 搜索目录 
+   只显示匹配文件名 `grep -H -r "v\$temp_space_header" /u01/app/logs/ | cut -d: -f1`
+
  * 挂载磁盘
 ```
  [root@weirui /]# df -h  //挂在磁盘操作（还有一个300G的盘没显示出来）
@@ -48,7 +70,7 @@ tags:
  [root@weirui /]# mkfs -t ext4 /dev/xvdb1      //格式化未挂载的磁盘，使用ext3格式 
  [root@weirui /]# mkdir /alidata1       //创建挂载对应的目录 
  [root@weirui /]# mount /dev/xvdb1 /alidata1    //将磁盘挂载到创建的目录上 
- ```
+```
  * 开机直接挂载  
 编辑`/etc/fstab`文件  
 添加：`/dev/xvdb1 /alidata1 ext4 defaults 0 0 `
@@ -57,12 +79,12 @@ tags:
  * 查看端口状态
  ```
  lsof -i:8000
-```
+ ```
  ```
 netstat -ntlp   //查看当前所有tcp端口·
 netstat -ntulp |grep 80   //查看所有80端口使用情况·
 netstat -an | grep 3306   //查看所有3306端口使用情况·
-```
+ ```
    * netstat命令各个参数说明如下：
       * -t : 指明显示TCP端口
       * -u : 指明显示UDP端口
@@ -81,7 +103,7 @@ hostname
 -i：显示主机的ip地址；
 -s：显示短主机名称，在第一个点处截断；
 -y：显示NIS域名。
-```
+ ```
  * 修改hostname    
 永久修改主机名，需要同时修改`/etc/hosts`和`/etc/sysconfig/network`的相关内容
 
